@@ -1,0 +1,5 @@
+# http://stackoverflow.com/questions/38076968/jinja2-template-variables-to-one-line
+elasticsearch_discovery_zen_ping_unicast_hosts = {% for host in groups['tag_Function_logdb']  %}
+{{ host }}:9300
+{%- if loop.first %},{% endif %}
+{% endfor %}
